@@ -16,7 +16,7 @@ janela.title('')
 janela.geometry('295x230')
 janela.configure(bg=co0)
 
-
+ 
 #------dividindo a janela em duas partes-------
 
 
@@ -46,7 +46,7 @@ frame_baixo.grid(row=1, column=0, sticky=NSEW)
 
 nome_app= Label(
     frame_cima,
-    text='Calculadora IMC',
+    text='Calculadora de IMC',
     width=23,
     height=1,  
     padx=0,
@@ -129,14 +129,47 @@ resultado= Label(
     text='- - -',
     width= 5,
     height=1, 
-    padx=6, 
+    padx=12, 
     pady=12, 
     relief='flat', 
     anchor='center', 
     font=('Arial', 24, 'bold'), 
     bg= co2, fg=co0
 )
-resultado.place(x=170, y=10)
+resultado.place(x=175, y=10)
+
+
+#----------------- inrformando IMC -------------------
+
+resultado_imc= Label(
+    frame_baixo,
+    text='O seu IMC é: sobrepeso',
+    width= 37,
+    height=1 , 
+    padx=6, 
+    pady=12, 
+    relief='flat', 
+    anchor='center', 
+    font=('Arial', 10 , 'bold'), 
+    bg=co0, fg=co1
+)
+resultado_imc.place(x=0, y=90) 
+
+
+#------------- botão de calcular o imc ---------------
+
+btn_calcular= Button(
+    frame_baixo,
+    text='Calcular IMC',
+    width= 34 ,
+    height=1 ,
+    overrelief='solid', 
+    relief='raised', 
+    anchor='center', 
+    font=('Arial', 10 , 'bold'), 
+    bg=co2, fg=co1
+)
+btn_calcular.grid(row=4 ,column=0 ,sticky=NSEW ,pady=60 , padx=25, columnspan=30)
 
 
 
