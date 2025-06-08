@@ -17,7 +17,7 @@ janela.geometry('295x230')
 janela.configure(bg=co0)
 
 
-#dividindo a janela em duas partes 
+#------dividindo a janela em duas partes-------
 
 
 frame_cima= Frame(
@@ -26,7 +26,6 @@ frame_cima= Frame(
     height=50, 
     bg=co0, 
     pady=0 , 
-    padx=0, 
     relief='flat'
 )
 frame_cima.grid(row=0, column=0, sticky=NSEW)
@@ -43,19 +42,18 @@ frame_baixo= Frame(
 frame_baixo.grid(row=1, column=0, sticky=NSEW)
 
 
-#configurando frame cima
-
+#-----------configurando frame cima--------------
 
 nome_app= Label(
     frame_cima,
-    text='Calculadora de IMC',
-    width=400, 
-    height=1, 
-    padx=0, 
+    text='Calculadora IMC',
+    width=23,
+    height=1,  
+    padx=0,
     relief='flat', 
     anchor='center', 
     font=('Arial', 16, 'bold'), 
-    bg= co0, fg=co1
+    bg=co0, fg=co1
 )
 nome_app.place(relx=0.5, y=10, anchor='center')
 
@@ -73,8 +71,57 @@ linha_app= Label(
 linha_app.place(x=0, y=35)
 
 
+#----------- configurando frame baixo --------------
+
+
+#-------------- coletando peso ---------------------
+
+peso= Label(
+    frame_baixo,
+    text='Insira seu peso',
+    height=1, 
+    padx=0, 
+    relief='flat', 
+    anchor='center', 
+    font=('Arial', 10, 'bold'), 
+    bg= co0, fg=co1
+)
+peso.grid(row=0, column=0, sticky=NSEW, pady=10, padx=3)
+
+result_peso= Entry(
+    frame_baixo,
+    width= 5,
+    relief='solid', 
+    font=('Arial', 10, 'bold'),
+    justify='center' 
+)
+result_peso.grid(row=0, column=1, sticky=NSEW, pady=10, padx=3)
+
+
+#------------- coletando altura ---------------------
+
+altura = Label(
+    frame_baixo,
+    text='Insira sua altura',
+    height=1, 
+    padx=0, 
+    relief='flat', 
+    anchor='center', 
+    font=('Arial', 10, 'bold'), 
+    bg= co0, fg=co1
+)
+altura.grid(row=1, column=0, sticky=NSEW, pady=10, padx=3)
+
+result_altura = Entry(
+    frame_baixo,
+    width= 5,
+    relief='solid', 
+    font=('Arial', 10, 'bold'),
+    justify='center' 
+)
+result_altura.grid(row=1, column=1, sticky=NSEW, pady=10, padx=3)
+
 
 janela.mainloop()
 
 #criação da janela realizada 
-
