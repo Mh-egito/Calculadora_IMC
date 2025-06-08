@@ -74,7 +74,7 @@ linha_app.place(x=0, y=35)
 #----------- configurando frame baixo --------------
 
 
-#-------------- coletando peso ---------------------
+#---------------- coletando peso -------------------
 
 peso= Label(
     frame_baixo,
@@ -98,7 +98,7 @@ result_peso= Entry(
 result_peso.grid(row=0, column=1, sticky=NSEW, pady=10, padx=3)
 
 
-#------------- coletando altura ---------------------
+#---------------- coletando altura ------------------
 
 altura = Label(
     frame_baixo,
@@ -120,6 +120,24 @@ result_altura = Entry(
     justify='center' 
 )
 result_altura.grid(row=1, column=1, sticky=NSEW, pady=10, padx=3)
+
+
+#--------------- informando resultado ---------------
+
+resultado= Label(
+    frame_baixo,
+    text='- - -',
+    width= 5,
+    height=1, 
+    padx=6, 
+    pady=12, 
+    relief='flat', 
+    anchor='center', 
+    font=('Arial', 24, 'bold'), 
+    bg= co2, fg=co0
+)
+resultado.place(x=170, y=10)
+
 
 
 janela.mainloop()
