@@ -76,7 +76,7 @@ linha_app.place(x=0, y=35)
 
 #---------------- coletando peso -------------------
 
-peso= Label(
+linha_peso= Label(
     frame_baixo,
     text='Insira seu peso',
     height=1, 
@@ -86,7 +86,7 @@ peso= Label(
     font=('Arial', 10, 'bold'), 
     bg= co0, fg=co1
 )
-peso.grid(row=0, column=0, sticky=NSEW, pady=10, padx=3)
+linha_peso.grid(row=0, column=0, sticky=NSEW, pady=10, padx=3)
 
 result_peso= Entry(
     frame_baixo,
@@ -100,7 +100,7 @@ result_peso.grid(row=0, column=1, sticky=NSEW, pady=10, padx=3)
 
 #---------------- coletando altura ------------------
 
-altura = Label(
+linha_altura = Label(
     frame_baixo,
     text='Insira sua altura',
     height=1, 
@@ -110,7 +110,7 @@ altura = Label(
     font=('Arial', 10, 'bold'), 
     bg= co0, fg=co1
 )
-altura.grid(row=1, column=0, sticky=NSEW, pady=10, padx=3)
+linha_altura.grid(row=1, column=0, sticky=NSEW, pady=10, padx=3)
 
 result_altura = Entry(
     frame_baixo,
@@ -124,7 +124,7 @@ result_altura.grid(row=1, column=1, sticky=NSEW, pady=10, padx=3)
 
 #--------------- informando resultado ---------------
 
-resultado= Label(
+valor_imc= Label(
     frame_baixo,
     text='- - -',
     width= 5,
@@ -136,7 +136,7 @@ resultado= Label(
     font=('Arial', 24, 'bold'), 
     bg= co2, fg=co0
 )
-resultado.place(x=175, y=10)
+valor_imc.place(x=175, y=10)
 
 
 #----------------- inrformando IMC -------------------
@@ -170,6 +170,27 @@ btn_calcular= Button(
     bg=co2, fg=co1
 )
 btn_calcular.grid(row=4 ,column=0 ,sticky=NSEW ,pady=60 , padx=25, columnspan=30)
+
+
+#-------------------- calculos -----------------------
+
+peso= 76
+altura= 1.7
+
+resultado= peso / altura ** 2
+
+if resultado < 18.5:
+    print('De acordo com seu IMC vc está abaixo do peso')
+elif resultado >= 18.5 and resultado < 25:
+    print('De acordo com seu IMC vc está normal')
+elif resultado >= 25 and resultado <30:
+    print('De acordo com seu IMC vc está sobrepeso')
+else:
+    print('De acordo com seu IMC vc está em obesidade')
+
+
+
+
 
 
 
