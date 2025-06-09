@@ -77,34 +77,39 @@ linha_app.place(x=0, y=35)
 #------------------- calculos ----------------------
 
 def calcular():
+    try:
 
-    peso= float(result_peso.get())
-    altura= float(result_altura.get())
+        peso= float(result_peso.get())
+        altura= float(result_altura.get())
 
-    imc  = peso / altura ** 2
+        imc  = peso / altura ** 2
 
-    resultado = imc
+        resultado = imc
 
-    if resultado < 18.5:
-        resultado_imc['text'] =  'De acordo com seu IMC: Você está abaixo do peso'
+        if resultado < 18.5:
+            resultado_imc['text'] =  'De acordo com seu IMC: Você está abaixo do peso'
 
-    elif resultado >= 18.5 and resultado < 25:
-        resultado_imc['text'] = 'De acordo com seu IMC: Você está normal'
+        elif resultado >= 18.5 and resultado < 25:
+            resultado_imc['text'] = 'De acordo com seu IMC: Você está normal'
 
-    elif resultado >= 25 and resultado <30:
-        resultado_imc['text'] = 'De acordo com seu IMC: Você está com sobrepeso' 
+        elif resultado >= 25 and resultado <30:
+            resultado_imc['text'] = 'De acordo com seu IMC: Você está com sobrepeso' 
 
-    elif resultado >= 30 and resultado <35:
-        resultado_imc['text'] = 'De acordo com seu IMC: você está com obesidade grau I'
+        elif resultado >= 30 and resultado <35:
+            resultado_imc['text'] = 'De acordo com seu IMC: você está com obesidade grau I'
 
-    elif resultado >= 35 and resultado <40:
-        resultado_imc['text'] = 'De acordo com seu IMC: você está com obesidade grau II'
+        elif resultado >= 35 and resultado <40:
+            resultado_imc['text'] = 'De acordo com seu IMC: você está com obesidade grau II'
 
-    else:
-        resultado_imc['text'] = 'De acordo com seu IMC: Você está com obesidade Grau III'
+        else:
+            resultado_imc['text'] = 'De acordo com seu IMC: Você está com obesidade Grau III'
 
 
-    valor_imc['text'] = '{:.{}f}'.format(resultado, 2)
+        valor_imc['text'] = '{:.{}f}'.format(resultado, 2)
+
+    except ValueError:
+        resultado_imc['text'] = 'Por favor, insira números válidos.'
+        valor_imc['text'] = '' 
 
 
 
