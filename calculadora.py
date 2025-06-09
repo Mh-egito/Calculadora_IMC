@@ -17,7 +17,7 @@ janela.geometry('295x230')
 janela.configure(bg=co0)
 
  
-#------dividindo a janela em duas partes-------
+#----- dividindo a janela em duas partes ------
 
 
 frame_cima= Frame(
@@ -42,7 +42,7 @@ frame_baixo= Frame(
 frame_baixo.grid(row=1, column=0, sticky=NSEW)
 
 
-#-----------configurando frame cima--------------
+#---------- configurando frame cima -------------
 
 nome_app= Label(
     frame_cima,
@@ -72,6 +72,40 @@ linha_app.place(x=0, y=35)
 
 
 #----------- configurando frame baixo --------------
+
+
+#------------------- calculos ----------------------
+
+def calcular():
+
+    peso= float(result_peso.get())
+    altura= float(result_altura.get())
+
+    imc  = peso / altura ** 2
+
+    resultado = imc
+
+    if resultado < 18.5:
+        resultado_imc['text'] =  'De acordo com seu IMC: Você está abaixo do peso'
+
+    elif resultado >= 18.5 and resultado < 25:
+        resultado_imc['text'] = 'De acordo com seu IMC: Você está normal'
+
+    elif resultado >= 25 and resultado <30:
+        resultado_imc['text'] = 'De acordo com seu IMC: Você está com sobrepeso' 
+
+    elif resultado >= 30 and resultado <35:
+        resultado_imc['text'] = 'de acordo com seu IMC: você está com obesidade grau I'
+
+    elif resultado >= 35 and resultado <40:
+        resultado_imc['text'] = 'de acordo com seu IMC: você está com obesidade grau II'
+
+    else:
+        resultado_imc['text'] = 'De acordo com seu IMC: Você está com obesidade Grau III'
+
+
+    valor_imc['text'] = '{:.{}f}'.format(resultado, 2)
+
 
 
 #---------------- coletando peso -------------------
@@ -126,7 +160,7 @@ result_altura.grid(row=1, column=1, sticky=NSEW, pady=10, padx=3)
 
 valor_imc= Label(
     frame_baixo,
-    text='- - -',
+    text='',
     width= 5,
     height=1, 
     padx=12, 
@@ -143,14 +177,14 @@ valor_imc.place(x=175, y=10)
 
 resultado_imc= Label(
     frame_baixo,
-    text='O seu IMC é: sobrepeso',
+    text='',
     width= 37,
     height=1 , 
     padx=6, 
     pady=12, 
     relief='flat', 
     anchor='center', 
-    font=('Arial', 10 , 'bold'), 
+    font=('Arial', 9 , 'bold'), 
     bg=co0, fg=co1
 )
 resultado_imc.place(x=0, y=90) 
@@ -160,6 +194,7 @@ resultado_imc.place(x=0, y=90)
 
 btn_calcular= Button(
     frame_baixo,
+    command= calcular,
     text='Calcular IMC',
     width= 34 ,
     height=1 ,
@@ -172,28 +207,8 @@ btn_calcular= Button(
 btn_calcular.grid(row=4 ,column=0 ,sticky=NSEW ,pady=60 , padx=25, columnspan=30)
 
 
-#-------------------- calculos -----------------------
-
-peso= 76
-altura= 1.7
-
-resultado= peso / altura ** 2
-
-if resultado < 18.5:
-    print('De acordo com seu IMC vc está abaixo do peso')
-elif resultado >= 18.5 and resultado < 25:
-    print('De acordo com seu IMC vc está normal')
-elif resultado >= 25 and resultado <30:
-    print('De acordo com seu IMC vc está sobrepeso')
-else:
-    print('De acordo com seu IMC vc está em obesidade')
-
-
-
-
-
 
 
 janela.mainloop()
 
-#criação da janela realizada 
+#janela finalizada 
