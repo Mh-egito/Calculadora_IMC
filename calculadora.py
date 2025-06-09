@@ -95,10 +95,10 @@ def calcular():
         resultado_imc['text'] = 'De acordo com seu IMC: Você está com sobrepeso' 
 
     elif resultado >= 30 and resultado <35:
-        resultado_imc['text'] = 'de acordo com seu IMC: você está com obesidade grau I'
+        resultado_imc['text'] = 'De acordo com seu IMC: você está com obesidade grau I'
 
     elif resultado >= 35 and resultado <40:
-        resultado_imc['text'] = 'de acordo com seu IMC: você está com obesidade grau II'
+        resultado_imc['text'] = 'De acordo com seu IMC: você está com obesidade grau II'
 
     else:
         resultado_imc['text'] = 'De acordo com seu IMC: Você está com obesidade Grau III'
